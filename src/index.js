@@ -30,7 +30,7 @@ fetchBreeds().then(data => {
     placeholder: 'Select a breed',
     data: arrayBreedsId,
   });
-});
+}).catch(err=>console.log(err);)
 // console.log(arrayBreedsId);
 
 
