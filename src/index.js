@@ -22,7 +22,7 @@ const { selector, divCatInfo, loader, error } = refs;
 const arrayBreedsId = [];
 fetchBreeds().then(data => {
   data.forEach(element => {
-    arrayBreedsId.push({text:element.name, value:element.id})
+    arrayBreedsId.push({ text: element.name, value: element.id })
     // console.log(element);
   });
   new SlimSelect({
@@ -30,7 +30,7 @@ fetchBreeds().then(data => {
     placeholder: 'Select a breed',
     data: arrayBreedsId,
   });
-}).catch(err=>console.log(err);)
+}).catch(onError());
 // console.log(arrayBreedsId);
 
 
@@ -47,8 +47,11 @@ function onSelectBreed(e) {
       const { url, breeds } = data[0];
       divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width='400'/></div><div class="box"><h1>${breeds[0].name}</h1></div>`;
     })
-    .catch(err => console.log(err));
+    .catch(onError());
 
 
 }
 
+function onError() {
+  Notify.failure('Oops! Something went wrong! Try reloading the page!');
+}
