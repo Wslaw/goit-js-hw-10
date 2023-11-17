@@ -30,7 +30,7 @@ ul, li {
     overflow: hidden;
 }
 
-.breed-select{
+/* .breed-select{
   width: 300px;
   margin: auto;
   
@@ -38,9 +38,8 @@ ul, li {
 
 .loader,
 .error{
-  display: none;
     width: 250px;
 margin: 30px;
 text-align: center;
-}
+} */
 

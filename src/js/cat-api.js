@@ -1,4 +1,4 @@
-console.log('Hello');
+// console.log('Hello');
 
 const URL = 'https://api.thecatapi.com/v1';
 // ===ключ в коді зберігати не можна======файл.env  якийcь треба
@@ -16,15 +16,17 @@ export function fetchBreeds() {
         .catch((err)=>console.log(err));
 }
 
-// export function fetchBreeds() {
-//   return fetch(`${URL}/images/search?api_key=${API_KEY}&limit=4`)
-//     .then(response => {
-//       // console.log(response);
-//       if (!response.ok) {
-//         throw new Error('404 not found');
-//       }
-//       return response.json();
-//     })
-//     // .then(resp => console.log(resp))
-//     .catch(err => console.log(err));
-// }
+export function fetchCatByBreed(breedId) {
+  return (
+    fetch(`${URL}/images/search?api_key=${API_KEY}&limit=${breedId}`)
+      .then(response => {
+        // console.log(response);
+        if (!response.ok) {
+          throw new Error('404 not found');
+        }
+        return response.json();
+      })
+      // .then(resp => console.log(resp))
+      .catch(err => console.log(err))
+  );
+}
