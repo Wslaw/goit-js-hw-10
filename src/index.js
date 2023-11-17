@@ -27,7 +27,7 @@ fetchBreeds().then(data => {
   });
   new SlimSelect({
     select: selector,
-    // placeholder: 'Select a breed',
+    placeholder: 'Select a breed',
     data: arrayBreedsId,
   });
 });
@@ -44,8 +44,8 @@ function onSelectBreed(e) {
   const breedId = e.currentTarget.value;
   fetchCatByBreed(breedId)
     .then(data => {
-      const { URL, breeds } = data[0];
-      divCatInfo.innerHTML = `<div class="box-img"><img src="${URL}" alt="${breeds[0].name}" width='400'/></div><div class="box"><h1>${breeds[0].name}</h1></div>`;
+      const { url, breeds } = data[0];
+      divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width='400'/></div><div class="box"><h1>${breeds[0].name}</h1></div>`;
     })
     .catch(err => console.log(err));
 
