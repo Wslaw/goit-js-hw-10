@@ -19,11 +19,14 @@ ul, li {
 }
 
 .breed-select{
-    max-width: 450px;
+    width: 300px;
     margin: auto;
+    
 }
 
-.loader{
+.loader,
+.error{
     width: 250px;
-margin: 20px;
+margin: 30px;
+text-align: center;
 }
