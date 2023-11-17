@@ -15,7 +15,6 @@ const refs = {
   error: document.querySelector('.error'),
 }
 
-// console.log(refs);
 
 const { selector, divCatInfo, loader, error } = refs;
 
@@ -23,7 +22,6 @@ const arrayBreedsId = [];
 fetchBreeds().then(data => {
   data.forEach(element => {
     arrayBreedsId.push({ text: element.name, value: element.id })
-    // console.log(element);
   });
   new SlimSelect({
     select: selector,
@@ -31,13 +29,9 @@ fetchBreeds().then(data => {
     data: arrayBreedsId,
   });
 }).catch(onError());
-// console.log(arrayBreedsId);
 
 
-// slim.onChange = () => {
-//   const selectedBreed = slim.data.getSelected();
-//   console.log(`Selected breedId: ${selectedBreed}`);
-// }
+
 selector.addEventListener('change', onSelectBreed);
 function onSelectBreed(e) {
   
