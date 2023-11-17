@@ -10,7 +10,7 @@ axios.defaults.headers.common['x-api-key'] =
 
 const refs = {
   selector: document.querySelector('.breed-select'),
-  divCatInfo: document.querySelector('.divCatInfo'),
+  divCatInfo: document.querySelector('.cat-info'),
   loader: document.querySelector('.loader'),
   error: document.querySelector('.error'),
 }
@@ -25,30 +25,30 @@ fetchBreeds().then(data => {
     arrayBreedsId.push({text:element.name, value:element.id})
     // console.log(element);
   });
+  new SlimSelect({
+    select: selector,
+    // placeholder: 'Select a breed',
+    data: arrayBreedsId,
+  });
 });
 // console.log(arrayBreedsId);
 
-new SlimSelect({
-  select: 'selector',
-  placeholder: 'Select a breed',
-  data: arrayBreedsId,
-});
 
 // slim.onChange = () => {
 //   const selectedBreed = slim.data.getSelected();
 //   console.log(`Selected breedId: ${selectedBreed}`);
 // }
-selector.addEventListener('change', onSelectBreed);
-function onSelectBreed(e) {
+// selector.addEventListener('change', onSelectBreed);
+// function onSelectBreed(e) {
   
-  const breedId = e.currentTarget.value;
-  fetchCatByBreed(breedId)
-    .then(data => {
-      const { URL, breeds } = data[0];
-      divCatInfo.innerHTML = `<div class="box-img"><img src="${URL}" alt="${breeds[0].name}" width='400'/></div><div class="box"><h1>${breeds[0].name}</h1></div>`;
-    })
-    .catch(err => console.log(err));
+//   const breedId = e.currentTarget.value;
+//   fetchCatByBreed(breedId)
+//     .then(data => {
+//       const { URL, breeds } = data[0];
+//       divCatInfo.innerHTML = `<div class="box-img"><img src="${URL}" alt="${breeds[0].name}" width='400'/></div><div class="box"><h1>${breeds[0].name}</h1></div>`;
+//     })
+//     .catch(err => console.log(err));
 
 
-}
+// }
 

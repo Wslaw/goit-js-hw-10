@@ -30,9 +30,9 @@ ul, li {
     overflow: hidden;
 }
 
-/* .breed-select{
-  width: 300px;
-  margin: auto;
+.breed-select{
+  max-width: 300px;
+  margin:  auto 50px;
   
 }
 
@@ -41,5 +41,5 @@ ul, li {
     width: 250px;
 margin: 30px;
 text-align: center;
-} */
+}
 
