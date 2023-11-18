@@ -19,10 +19,12 @@ const refs = {
 const { selector, divCatInfo, loader, error } = refs;
 
 const arrayBreedsId = [];
-fetchBreeds().then(data => {
+fetchBreeds()
+  .then(data => {
   data.forEach(element => {
     arrayBreedsId.push({ text: element.name, value: element.id })
   });
+    
   new SlimSelect({
     select: selector,
     placeholder: 'Select a breed',
@@ -31,8 +33,8 @@ fetchBreeds().then(data => {
 }).catch(onError());
 
 
-
 selector.addEventListener('change', onSelectBreed);
+
 function onSelectBreed(e) {
   
   const breedId = e.currentTarget.value;

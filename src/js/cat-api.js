@@ -4,6 +4,12 @@ const URL = 'https://api.thecatapi.com/v1';
 // ===ключ в коді зберігати не можна======файл.env  якийcь треба
 const API_KEY =
   'live_wmYNT4c87b7lQ9XjUOOUpcXUeEHCw4gcRGHUbeZrxjFiNG5WNlXbDIQxPfZH9ACK';
+
+  // axios.defaults.headers.common['x-api-key'] =
+  //   'live_wmYNT4c87b7lQ9XjUOOUpcXUeEHCw4gcRGHUbeZrxjFiNG5WNlXbDIQxPfZH9ACK';
+
+
+
 export function fetchBreeds() {
     return fetch(`${URL}/breeds?api_key=${API_KEY}`)
         .then(response => {
@@ -18,7 +24,7 @@ export function fetchBreeds() {
 
 export function fetchCatByBreed(breedId) {
   return (
-    fetch(`${URL}/images/search?api_key=${API_KEY}&limit=${breedId}`)
+    fetch(`${URL}/images/search?api_key=${API_KEY}&breed_ids=${breedId}`)
       .then(response => {
         // console.log(response);
         if (!response.ok) {
