@@ -16,7 +16,8 @@ export function fetchBreeds() {
             // console.log(response);
       if (!response.ok) {
         throw new Error('404 not found');
-      }
+          }
+    
       return response.json();
         })
         .catch((err)=>console.log(err));

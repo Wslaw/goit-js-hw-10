@@ -48,9 +48,14 @@ li {
   margin: 100px 450px;
 }
 
-.loader,
+.loader{
+  display: none;
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+}
 .error {
-  /* display: none; */
+  display: none;
   max-width: 250px;
   margin: auto;
   text-align: center;
