@@ -44,3 +44,19 @@ margin: 30px;
 text-align: center;
 }
 
+.cat-info{
+margin-top: 20px;
+padding: 20px;display: flex;
+justify-content:center;
+background-color: aquamarine;
+border: 1px solid darkblue;
+}
+
+.box-img{
+  display: flex;
+  align-items: center;
+}
+
+.box{
+  width: 500px;
+}

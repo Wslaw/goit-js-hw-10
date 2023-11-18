@@ -33,6 +33,6 @@ export function fetchCatByBreed(breedId) {
         return response.json();
       })
       // .then(resp => console.log(resp))
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err))
   );
 }

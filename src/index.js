@@ -5,8 +5,8 @@ import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 import {fetchCatByBreed} from "./js/cat-api.js"
 
-axios.defaults.headers.common['x-api-key'] =
-  'live_wmYNT4c87b7lQ9XjUOOUpcXUeEHCw4gcRGHUbeZrxjFiNG5WNlXbDIQxPfZH9ACK';
+// axios.defaults.headers.common['x-api-key'] =
+//   'live_wmYNT4c87b7lQ9XjUOOUpcXUeEHCw4gcRGHUbeZrxjFiNG5WNlXbDIQxPfZH9ACK';
 
 const refs = {
   selector: document.querySelector('.breed-select'),
@@ -41,7 +41,7 @@ function onSelectBreed(e) {
   fetchCatByBreed(breedId)
     .then(data => {
       const { url, breeds } = data[0];
-      divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="450"/></div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p><p><b>Temperament:</b>${breeds[0].temperament}</p></div>`
+      divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="500"/></div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p><p><b>Temperament:</b>${breeds[0].temperament}</p></div>`
     })
     .catch(onError());
 
@@ -49,5 +49,6 @@ function onSelectBreed(e) {
 }
 
 function onError() {
-  Notify.failure('Oops! Something went wrong! Try reloading the page!');
+  Notify.failure('Oops! Something went wrong! Try reloading the page!',
+  {timeout: 2000},)
 }
