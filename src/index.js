@@ -34,7 +34,8 @@ fetchBreeds()
   selector.addEventListener('change', onSelectBreed);
   
   function onSelectBreed(e) {
-  loader.style.visibility = 'visible';  
+    // loader.style.visibility = 'visible';  
+     loader.classList.remove('is-hidden');
   const breedId = e.currentTarget.value;
   fetchCatByBreed(breedId)
     .then(data => {
@@ -49,9 +50,11 @@ fetchBreeds()
        // Добавляем обработчик события onload
        imgElement.onload = function () {
          // Скрываем лоадер после загрузки изображения
-         loader.style.visibility = 'hidden';
+         //  loader.style.visibility = 'hidden';
+         loader.classList.add('is-hidden');
        };
-      divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="500"/></div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p><p><b>Temperament:</b>${breeds[0].temperament}</p></div>`
+      divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="500"/>
+      </div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p></br><p><b>Temperament:</b>${breeds[0].temperament}</p></div>`
     })
     .catch(onError)
     // .finally(()=>loader.style.display = "none")
