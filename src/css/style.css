@@ -53,6 +53,7 @@ li {
   max-width: 250px;
   margin: auto;
   text-align: center;
+  font-size: 18px;
 }
 .error {
   display: none;

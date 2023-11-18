@@ -34,16 +34,27 @@ fetchBreeds()
   selector.addEventListener('change', onSelectBreed);
   
   function onSelectBreed(e) {
-  loader.style.display = "block";
-  
+  loader.style.display = "block";  
   const breedId = e.currentTarget.value;
   fetchCatByBreed(breedId)
     .then(data => {
       const { url, breeds } = data[0];
+
+       const imgElement = document.createElement('img');
+
+       // Устанавливаем атрибуты src и alt
+       imgElement.src = url;
+       imgElement.alt = breeds[0].name;
+
+       // Добавляем обработчик события onload
+       imgElement.onload = function () {
+         // Скрываем лоадер после загрузки изображения
+         loader.style.display = 'none';
+       };
       divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="500"/></div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p><p><b>Temperament:</b>${breeds[0].temperament}</p></div>`
     })
     .catch(onError)
-    .finally(()=>loader.style.display = "none")
+    // .finally(()=>loader.style.display = "none")
 
 }
 
