@@ -1,15 +1,20 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body, h1, h2, h3, p, ul, li {
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
-
 }
 
-body{
-  background-color: aquamarine;
+body {
+  background-color: rgb(192, 224, 214);
 }
 
 img {
@@ -19,52 +24,54 @@ img {
   object-fit: cover;
   border: 1px solid darkblue;
 }
-ul, li {
-      list-style-type: none;
+ul,
+li {
+  list-style-type: none;
 }
 
 .is-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-.breed-select{
-  max-width: 300px;
-  margin:  100px 450px;
-  
+.breed-select {
+  margin: 0 auto;
+  max-width: 200px;
+  margin: 100px 450px;
 }
 
 .loader,
-.error{
-  display: none;
-   max-width: 250px;
-margin: 30px;
-text-align: center;
+.error {
+  /* display: none; */
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
 }
 
-.cat-info{
-margin-top: 20px;
-padding: 20px;display: flex;
-justify-content:center;
-background-color: aquamarine;
-/* border: 1px solid darkblue; */
-gap: 30px;
-flex-wrap: wrap;
+.cat-info {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(192, 224, 214);
+  /* border: 1px solid darkblue; */
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.box-img{
+.box-img {
   display: flex;
   align-items: center;
 }
 
-.box{
+.box {
   width: 500px;
 }
