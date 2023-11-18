@@ -34,7 +34,7 @@ fetchBreeds()
   selector.addEventListener('change', onSelectBreed);
   
   function onSelectBreed(e) {
-  loader.style.display = "block";  
+  loader.style.visibility = 'visible';  
   const breedId = e.currentTarget.value;
   fetchCatByBreed(breedId)
     .then(data => {
@@ -49,7 +49,7 @@ fetchBreeds()
        // Добавляем обработчик события onload
        imgElement.onload = function () {
          // Скрываем лоадер после загрузки изображения
-         loader.style.display = 'none';
+         loader.style.visibility = 'hidden';
        };
       divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="500"/></div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p><p><b>Temperament:</b>${breeds[0].temperament}</p></div>`
     })
