@@ -52,7 +52,7 @@ li {
   /* display: none; */
   max-width: fit-content;
   margin: auto;
-  text-align: center;
+  text-align: start;
   font-size: 24px;
   font-weight: 400;
   /* justify-content: space-between; */
