@@ -30,7 +30,7 @@ fetchBreeds()
     placeholder: 'Select a breed',
     data: arrayBreedsId,
   });
-}).catch(onError());
+}).catch(onError);
 
 
 selector.addEventListener('change', onSelectBreed);
@@ -43,12 +43,12 @@ function onSelectBreed(e) {
       const { url, breeds } = data[0];
       divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="500"/></div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p><p><b>Temperament:</b>${breeds[0].temperament}</p></div>`
     })
-    .catch(onError());
+    .catch(onError);
 
 
 }
 
 function onError() {
   Notify.failure('Oops! Something went wrong! Try reloading the page!',
-  {timeout: 2000},)
+  {timeout: 5000},)
 }
