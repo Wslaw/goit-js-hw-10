@@ -14,6 +14,7 @@ const refs = {
 };
 
 const { selector, divCatInfo, loader, error } = refs;
+
 selector.addEventListener('change', onSelectBreed);
 
 const arrayBreedsId = [];
@@ -55,7 +56,7 @@ function onSelectBreed(e) {
 
       divCatInfo.innerHTML = `<div class="box-img"><img src="${url}" alt="${breeds[0].name}" width="500"/>
       </div><div class="box"><h1>${breeds[0].name}</h1><p>${breeds[0].description}</p></br>
-      <p><b>Temperament:</b>${breeds[0].temperament}</p></div>`;
+      <p><b>Temperament:</b>${breeds[0].description}</p></div>`;
     })
     .catch(onError);
   // .finally(()=>loader.style.display = "none")
