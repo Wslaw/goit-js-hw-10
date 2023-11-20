@@ -13,8 +13,8 @@ li {
   padding: 0;
 }
 
-body {
-  background-color: rgb(192, 224, 214);
+body {max-width: fit-content;
+  background-color: rgb(89, 158, 169);
 }
 
 img {
@@ -84,3 +84,42 @@ li {
 .box {
   width: 500px;
 }
+
+/* ******************video*************** */
+body {
+  margin: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+input {
+  padding: 8px;
+  font: inherit;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+        body {
+            margin: 0;
+            overflow: hidden; /* чтобы видео полностью занимало весь экран */
+        }
+
+        video {
+          opacity: 0.5;
+            object-fit: cover; /* чтобы видео занимало всю площадь */
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; /* чтобы видео было за содержимым body */
+        }
+   
