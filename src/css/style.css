@@ -113,7 +113,7 @@ button {
         }
 
         video {
-          opacity: 0.5;
+          opacity: 0.9;
             object-fit: cover; /* чтобы видео занимало всю площадь */
             width: 100%;
             height: 100%;
