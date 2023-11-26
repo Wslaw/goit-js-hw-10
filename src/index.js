@@ -34,7 +34,6 @@ fetchBreeds()
 
 
 function onSelectBreed(e) {
-  // loader.style.visibility = 'visible';
   loader.classList.remove('is-hidden');
   const breedId = e.currentTarget.value;
 
